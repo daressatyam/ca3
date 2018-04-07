@@ -1,24 +1,24 @@
 #include<stdio.h>
-#define N 10 //defining that no. of process cannot exceed 10
+#define N 10 
 typedef struct
 {
       int process_id, arrival_time, burst_time, priority;
       int q, ready;
-}s;//structure for multiqueue
+}s;
 typedef struct
 {
       int p_id;ra_t,rb_t,rp;
-}r;//structure for round robin
+}r;
 typedef struct
 {
       int fp_id;fa_t,fb_t,fp;
-}f;//structure for first come first serve
+}f;
 typedef struct
 {
       int pp_id;pa_t,pb_t,pp;
-}p;//structure for priority queue
+}p;
 int Queue(int q) {
-      if(q == 0 || q == 1 || q == 2 || q == 3)// 3 queue generation
+      if(q == 0 || q == 1 || q == 2 || q == 3)
       {
             return 1;
       }
@@ -27,27 +27,27 @@ int Queue(int q) {
             return 2;
       }
 }
-int main()//start of main class
+int main()
 {
       int n, i, temp_process, time, j, y;
       s temp;
       printf("Enter Total Number of Processes:\t");
-      scanf("%d", &n);// taking no. of process from user
-      s process[n];//array of n size of s type (multiqueue type)
+      scanf("%d", &n);
+      s process[n];
       for(i = 0; i < n; i++)
       {
             printf("\nProcess ID:\t");
-            scanf("%d", &process[i].process_id);//taking process ID
+            scanf("%d", &process[i].process_id);
             printf("Arrival Time:\t");
-            scanf("%d", &process[i].arrival_time);//taking arrival time
+            scanf("%d", &process[i].arrival_time);
             printf("Burst Time:\t");
-            scanf("%d", &process[i].burst_time);//taking burst time
+            scanf("%d", &process[i].burst_time);
             printf("Process Priority:\t");
-            scanf("%d", &process[i].priority);//taking priority 
-      } r proces[n];//array of n size of type r (round robin)
-      f pro[n];//array of n size of type f (fcfs)
-      p pr[n]; //array of n size of type r (priority)   
-      for(i=0;i<n;i++)//loop from 0 to total no. of process
+            scanf("%d", &process[i].priority);
+      } r proces[n];
+      f pro[n];
+      p pr[n];    
+      for(i=0;i<n;i++)
       {
             if(process[i].priority>0 && process[i].priority<10)
             {     rr=rr+1;
