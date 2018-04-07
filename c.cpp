@@ -1,95 +1,41 @@
-#include<stdio.h>
-#define N 10
-typedef struct
+#include <iostream>
+#include <fstream>
+using namespace std;
+struct studjg{
+    string s;
+    }ss[2];
+class student
 {
-      int process_id, arrival_time, burst_time, priority;
-      int q, ready;
-}s;
-typedef struct
-{
-      int p_id;ra_t,rb_t,rp;
-}r;
-typedef struct
-{
-      int fp_id;fa_t,fb_t,fp;
-}f;
-typedef struct
-{
-      int pp_id;pa_t,pb_t,pp;
-}p;
-int Queue(int q) {
-      if(q == 0 || q == 1 || q == 2 || q == 3)
-      {
-            return 1;
-      }
-      else
-      {
-            return 2;
-      }
-}
+    public:
+
+        int getData()
+        {
+             for(int i=0;i<2;i++){
+         cout<<"Enter name:"; cin>>ss[i].s;
+
+        }
+        }
+
+        int showData()
+        {
+             for(int i=0;i<2;i++){
+        cout<<"Name:"<<ss[i].s<<endl;
+
+        }}
+};
 int main()
 {
-      int n, i, temp_process, time, j, y;
-      s temp;
-      printf("Enter Total Number of Processes:\t");
-      scanf("%d", &n);
-      s process[n];
-      for(i = 0; i < n; i++)
-      {
-            printf("\nProcess ID:\t");
-            scanf("%d", &process[i].process_id);
-            printf("Arrival Time:\t");
-            scanf("%d", &process[i].arrival_time);
-            printf("Burst Time:\t");
-            scanf("%d", &process[i].burst_time);
-            printf("Process Priority:\t");
-            scanf("%d", &process[i].priority);
-            //temp_process = process[i].priority;
-            //process[i].q = Queue(temp_process);
-            //process[i].ready = 0;
-      } r proces[n];f pro[n];p pr[n];    
-      for(i=0;i<n;i++)
-      {
-            if(process[i].priority>0 && process[i].priority<10)
-            {
-                  round_robin();
-            }
-            else if(process[i].priority>10 && process[i].priority<20)
-            {
-                  fcfs();
-            }
-            else
-            {
-                  prior();
-            }    
-      
+    student s;
+    //fstream file;
 
-         }
- }
- void round_robin()
- {
-      int temp1;
-      printf("round_robin :\t");
-      printf("quantum time of 4 seconds:\t");
-      int static quantum=4;
-
- }    
-void fcfs()
-{     
-      printf("first come first serve :\t");
-      printf("quantum time of 10 seconds:\t");
-      int static quantm=10;
-      
+    ofstream file;
+    file.open("x3.txt",ios::out);
+    s.getData();
+    //file.write((char*)&s,sizeof(s));
+    file.close();
+    ifstream file1;
+    file1.open("x3.txt",ios::in);
+    //file1.read((char*)&s,sizeof(s));
+    s.showData();
+    file1.close();
 }
-void prior()
-{
-      printf("priority scheduling :\t");
-      printf("quantum time of 10 seconds:\t");
-      int static quant=10;
-
-}
-
-
-
-
-
